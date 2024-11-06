@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Определение числа</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #e8bdd9, #cbcbf7);
+
+        }
+
+        .block1 {
+            font-size: 15px;
+            font-family: Verdana, sans-serif;
+        }
+
+        .block2 {
+            margin-top: 10px;
+            font-family: Verdana, sans-serif;
+
+
+        }
+    </style>
+    <script>
+        function checkNumber() {
+            var number = parseFloat(document.getElementById("numberInput").value);
+            var resultText = "";
+
+
+            if (number > 0) {
+                resultText = "Число положительное.";
+            } else if (number < 0) {
+                resultText = "Число отрицательное.";
+            } else {
+                resultText = "Число равно нулю.";
+            }
+
+            document.getElementById("result").innerText = resultText;
+            document.getElementById("resultInput").value = resultText; // Обновляем скрытое поле с результатом
+        }
+        
+        function sendNumber() {
+            const input = document.getElementById('numberInput').value;
+            document.getElementById('hiddenInput').value = input;
+        }
+
+    
+    </script>
+
+</head>
+
+<body>
+    <div class="block2">
+        <div class="block1">
+            <a href="index1.html">
+                <p style="margin-top: 20px">Главная</p>
+                <a href="index.html">
+                    <p style="margin-top: 20px">Паспорт</p>
+                </a>
+                <a href="задача.html">
+                    <p style="margin-top: 20px"><b>Задача</b></p>
+                </a>
+                <a href="structure.html">
+                    <p style="margin-top: 20px">Структурные формулы метаболитов</p>
+                </a>
+                <a href="ank.html">
+                    <p style="margin-top: 20px">Задать вопрос по теме</p>
+                </a>
+        </div>
+        <h2>Дано вещественное число. Определить число: положительное, отрицательное, ноль.</h2>
+        <p>Введите вещественное число:</p>
+        <input type="number" id="numberInput">
+        <button onclick="checkNumber()">Проверить</button>
+
+        <h2>Результат:</h2>
+        <p id="result"></p>
+        <form action="https://www.google.com" target="_blank">
+            <input type="hidden" id="hiddenInput" name="number">
+            <input type="hidden" id="resultInput" name="result"> <!-- Скрытое поле для результата -->
+            <input type="hidden" id="hiddenЗадача" name="Условие" value="Дано вещественное число. Определить число: положительное, отрицательное, ноль.">
+            <input type="submit" value="Отправить" onclick="sendNumber()">
+        </form>
+    </div>
+
+   
+</body>
+</html>
